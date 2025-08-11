@@ -6,7 +6,7 @@ from .const import DATE_FORMAT
 
 
 @dataclass
-class MeteoBzSensor:
+class OpenMeteoSensor:
     date: str
     description_deu: str
     description_ita: str

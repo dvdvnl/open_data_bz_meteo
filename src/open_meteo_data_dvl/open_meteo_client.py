@@ -1,16 +1,16 @@
 import requests
 from typing import Optional
 
-from .meteo_bz_sensor import MeteoBzSensor
-from .meteo_bz_station import MeteoBzStation
+from .open_meteo_sensor import OpenMeteoSensor
+from .open_meteo_station import OpenMeteoStation
 
 
-class MeteoBzClient:
-    stations: list[MeteoBzStation] = []
-    sensors: list[MeteoBzSensor] = []
+class OpenMeteoClient:
+    stations: list[OpenMeteoStation] = []
+    sensors: list[OpenMeteoSensor] = []
 
     # Get all stations
-    def get_stations(self) -> list[MeteoBzStation]:
+    def get_stations(self) -> list[OpenMeteoStation]:
         # GET request to the API
         response = requests.get(
             "http://daten.buergernetz.bz.it/services/meteo/v1/stations"
@@ -22,12 +22,12 @@ class MeteoBzClient:
         # Loop through data and create a station objects
         for feature in data:
             station_data = feature["properties"]
-            self.stations.append(MeteoBzStation(station_data))
+            self.stations.append(OpenMeteoStation(station_data))
 
         return self.stations
 
     # Get a single station
-    def get_station(self, station_code: str) -> Optional[MeteoBzStation]:
+    def get_station(self, station_code: str) -> Optional[OpenMeteoStation]:
         # Get all stations
         self.get_stations()
 
@@ -37,8 +37,8 @@ class MeteoBzClient:
                 return station
 
     # Get sensors from station
-    def get_sensors(self, station: MeteoBzStation) -> list[MeteoBzSensor]:
-        sensors: list[MeteoBzSensor] = []
+    def get_sensors(self, station: OpenMeteoStation) -> list[OpenMeteoSensor]:
+        sensors: list[OpenMeteoSensor] = []
 
         # GET request to the API
         response = requests.get(
@@ -51,12 +51,12 @@ class MeteoBzClient:
 
         # Loop through data and create a sensor objects
         for sensor_data in data:
-            sensors.append(MeteoBzSensor(sensor_data))
+            sensors.append(OpenMeteoSensor(sensor_data))
 
         return sensors
 
     # Get a single sensor from a station
-    def get_sensor(self, station: MeteoBzStation, type: str) -> MeteoBzSensor:
+    def get_sensor(self, station: OpenMeteoStation, type: str) -> OpenMeteoSensor:
         # GET request to the API
         response = requests.get(
             "http://daten.buergernetz.bz.it/services/meteo/v1/sensors",
@@ -69,4 +69,4 @@ class MeteoBzClient:
                 f"No sensor found with type '{type}' for station '{station.station_code}'"
             )
 
-        return MeteoBzSensor(data[0])
+        return OpenMeteoSensor(data[0])

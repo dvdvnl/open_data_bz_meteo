@@ -1,4 +1,4 @@
-from src.open_meteo_data_dvl.meteo_bz_client import MeteoBzClient
+from open_meteo_data_dvl.open_meteo_client import OpenMeteoClient
 
 
 # List of strings to choose from
@@ -36,11 +36,11 @@ else:
     exit()
 
 # Get station data
-station = MeteoBzClient().get_station(scode)
+station = OpenMeteoClient().get_station(scode)
 
 if station is not None:
     # Get sensor data
-    station.sensors = MeteoBzClient().get_sensors(station)
+    station.sensors = OpenMeteoClient().get_sensors(station)
 
     # Print data
     print("---")
@@ -53,12 +53,12 @@ if station is not None:
 
     # Specific Sensor
     print("---")
-    sensorLT = MeteoBzClient().get_sensor(station, "LT")
+    sensorLT = OpenMeteoClient().get_sensor(station, "LT")
     print(
         f"{sensorLT.description_deu}: {sensorLT.value} {sensorLT.unit} ({sensorLT.type})"
     )
 
-    sensorGS = MeteoBzClient().get_sensor(station, "GS")
+    sensorGS = OpenMeteoClient().get_sensor(station, "GS")
     print(
         f"{sensorGS.description_deu}: {sensorGS.value} {sensorGS.unit} ({sensorGS.type})"
     )

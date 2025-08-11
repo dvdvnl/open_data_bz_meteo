@@ -1,12 +1,12 @@
 """Class for a meteo station object"""
 
 from dataclasses import dataclass, field
-from .meteo_bz_sensor import MeteoBzSensor
+from .open_meteo_sensor import OpenMeteoSensor
 from typing import Optional
 
 
 @dataclass
-class MeteoBzStation:
+class OpenMeteoStation:
     altitude: str
     latitude: str
     longitude: str
@@ -16,7 +16,7 @@ class MeteoBzStation:
     name_lld: str
     station_code: str
 
-    sensors: list[MeteoBzSensor] = field(default_factory=list)
+    sensors: list[OpenMeteoSensor] = field(default_factory=list)
 
     def __init__(self, apidata: dict[str, str]):
         # Set attributes
@@ -50,7 +50,7 @@ class MeteoBzStation:
         return sensor_types
 
     # Add a sensor to the station
-    def get_sensor(self, type: str) -> Optional[MeteoBzSensor]:
+    def get_sensor(self, type: str) -> Optional[OpenMeteoSensor]:
         for sensor in self.sensors:
             if sensor.type == type:
                 return sensor

@@ -1,1 +1,1 @@
-"""Meteo BZ Client"""
+"""Open Meteo Data Client"""
