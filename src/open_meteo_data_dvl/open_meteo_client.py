@@ -13,7 +13,7 @@ class OpenMeteoClient:
     def get_stations(self) -> list[OpenMeteoStation]:
         # GET request to the API
         response = requests.get(
-            "http://daten.buergernetz.bz.it/services/meteo/v1/stations"
+            "https://daten.buergernetz.bz.it/services/meteo/v1/stations"
         )
 
         # Get the data from the response
@@ -42,7 +42,7 @@ class OpenMeteoClient:
 
         # GET request to the API
         response = requests.get(
-            "http://daten.buergernetz.bz.it/services/meteo/v1/sensors",
+            "https://daten.buergernetz.bz.it/services/meteo/v1/sensors",
             params={"station_code": station.station_code},
         )
 
@@ -59,7 +59,7 @@ class OpenMeteoClient:
     def get_sensor(self, station: OpenMeteoStation, type: str) -> OpenMeteoSensor:
         # GET request to the API
         response = requests.get(
-            "http://daten.buergernetz.bz.it/services/meteo/v1/sensors",
+            "https://daten.buergernetz.bz.it/services/meteo/v1/sensors",
             params={"station_code": station.station_code, "sensor_code": type},
         )
 
