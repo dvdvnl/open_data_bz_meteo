@@ -1,10 +1,10 @@
 [project]
-name = "open_meteo_data_dvl"
-version = "0.2.1"
+name = "open_data_client"
+version = "0.3.0"
 authors = [
   { name="david vnl", email="io@davole.com" },
 ]
-description = "Python API client for the open meteo data V1 service, provided by Provincia autonoma di Bolzano - Informatica Alto Adige SPA."
+description = "Collection of Python API clients for different OpenData servies, provided by Provincia autonoma di Bolzano - Informatica Alto Adige SPA."
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
@@ -12,11 +12,53 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+dependencies = [
+    "requests==2.32.4"
+]
 
 [project.urls]
-Homepage = "https://github.com/dvdvnl/open_meteo_data"
-Issues = "https://github.com/dvdvnl/open_meteo_data/issues"
+Homepage = "https://github.com/dvdvnl/open_data_client"
+Issues = "https://github.com/dvdvnl/open_data_client/issues"
+
+[project.optional-dependencies]
+dev = [
+    "build",
+    "twine"
+]
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "src/open_data_client"
+]
+include = [
+    "README.md",
+    "LICENSE",
+    "src/open_data_client/**.py"
+]
+exclude = [
+    ".github",
+    ".vscode",
+    ".gitignore",
+    "**/sample.py",
+]
+
+[tool.hatch.build.targets.sdist]
+packages = [
+    "src/open_data_client"
+]
+include = [
+    "README.md",
+    "LICENSE",
+    "src/open_data_client/**.py"
+]
+exclude = [
+    ".github",
+    ".vscode",
+    ".gitignore",
+    "**/sample.py",
+]
+

@@ -1,4 +1,4 @@
-from open_meteo_data_dvl.open_meteo_client import OpenMeteoClient
+from open_data_client.open_meteo_data.open_meteo_client import OpenMeteoClient
 
 
 # List of strings to choose from
