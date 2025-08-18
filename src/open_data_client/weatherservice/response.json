@@ -1,0 +1,186 @@
+{
+  "id": 98382,
+  "date": "2025-08-23T00:00:00",
+  "hour": "11:00",
+  "today": {
+    "date": "2025-08-24T00:00:00",
+    "hour": "11:00",
+    "title": "Sonne und Wolken",
+    "conditions": "Südtirol verbleibt im Einflussbereich einer nordwestlichen Höhenströmung.",
+    "temperatures": "Die Temperaturen erreichen Höchstwerte von 20° in Sterzing bis 27° in Bozen.",
+    "stationData": [
+      {
+        "symbol": {
+          "code": "b",
+          "description": "Heiter",
+          "imageUrl": "https://api-weather.services.siag.it/api/v2/graphics/icons/imgsource/wetter/icon_2.png"
+        },
+        "max": 23,
+        "min": 11
+      },
+      {
+        "symbol": {
+          "code": "c",
+          "description": "Wolkig",
+          "imageUrl": "https://api-weather.services.siag.it/api/v2/graphics/icons/imgsource/wetter/icon_3.png"
+        },
+        "max": 26,
+        "min": 13
+      },
+      {
+        "symbol": {
+          "code": "c",
+          "description": "Wolkig",
+          "imageUrl": "https://api-weather.services.siag.it/api/v2/graphics/icons/imgsource/wetter/icon_3.png"
+        },
+        "max": 27,
+        "min": 15
+      },
+      {
+        "symbol": {
+          "code": "c",
+          "description": "Wolkig",
+          "imageUrl": "https://api-weather.services.siag.it/api/v2/graphics/icons/imgsource/wetter/icon_3.png"
+        },
+        "max": 20,
+        "min": 8
+      },
+      {
+        "symbol": {
+          "code": "b",
+          "description": "Heiter",
+          "imageUrl": "https://api-weather.services.siag.it/api/v2/graphics/icons/imgsource/wetter/icon_2.png"
+        },
+        "max": 24,
+        "min": 11
+      },
+      {
+        "symbol": {
+          "code": "b",
+          "description": "Heiter",
+          "imageUrl": "https://api-weather.services.siag.it/api/v2/graphics/icons/imgsource/wetter/icon_2.png"
+        },
+        "max": 22,
+        "min": 8
+      }
+    ],
+    "imageUrl": "https://api-weather.services.siag.it/api/v2/graphics/maps/meteomap1/98382/de",
+    "weather": "Am Vormittag überwiegt freundliches Wetter mit viel Sonnenschein. Später entstehen vermehrt Quellwolken, die stellenweise Regenschauer mit sich bringen können.",
+    "bulletinStatus": 16,
+    "type": "WEAT11",
+    "tMinMin": 8,
+    "tMinMax": 15,
+    "tMaxMin": 20,
+    "tMaxMax": 27,
+    "reliability": 80
+  },
+  "tomorrow": null,
+  "mountainToday": {
+    "date": "2025-08-24T00:00:00",
+    "title": "Sonne und Wolken",
+    "weather": "In den Bergen präsentiert sich das Wetter anfangs stabil und sonnig. Im Laufe des Nachmittags bilden sich jedoch einige Quellwolken, wodurch lokal die Wahrscheinlichkeit für Schauer zunimmt.",
+    "conditions": "Südtirol verbleibt im Einflussbereich einer nordwestlichen Höhenströmung.",
+    "temp1000": 19,
+    "temp2000": 9,
+    "temp3000": 2,
+    "temp4000": -4,
+    "snowLimit": [],
+    "zeroLimit": 3300,
+    "north": {
+      "code": "c",
+      "description": "Wolkig",
+      "imageUrl": "https://api-weather.services.siag.it/api/v2/graphics/icons/imgsource/wetter/icon_3.png"
+    },
+    "south": {
+      "code": "c",
+      "description": "Wolkig",
+      "imageUrl": "https://api-weather.services.siag.it/api/v2/graphics/icons/imgsource/wetter/icon_3.png"
+    },
+    "wind": {
+      "code": "H2",
+      "description": "mäßig aus Nordwest",
+      "imageUrl": "https://api-weather.services.siag.it/api/v2/graphics/icons/imgsource/wind/wind_2_nw.png"
+    },
+    "reliability": 80,
+    "moonRise": "07:32",
+    "moonSet": "20:40",
+    "sunRise": "06:26",
+    "sunSet": "20:09",
+    "imageUrl": "https://api-weather.services.siag.it/api/v2/graphics/maps/mountainmap1/98382/de"
+  },
+  "mountainTomorrow": null,
+  "bulletinStatus": 16,
+  "type": "WEAT11",
+  "evolution": "Der Montag beginnt in einigen Tälern mit Hochnebel. Danach wird es überwiegend sonnig mit hohen Wolkenfeldern.\r\nAm Dienstag ist es meist sonnig, im Tagesverlauf tauchen erneut Schleierwolken auf.\r\nDer Mittwoch bringt einen Wechsel aus Sonne und Wolken, vereinzelt sind am Nachmittag Regenschauer möglich.\r\nAm Donnerstag wird es unbeständiger. Es überwiegen die Wolken und im Tagesverlauf muss man verbreitet mit Schauern oder Gewittern rechnen.",
+  "evolutionTitle": "Überwiegend sonniges Wetter",
+  "dayForecasts": [
+    {
+      "date": "2025-08-25T00:00:00",
+      "reliability": 80,
+      "symbol": {
+        "code": "b",
+        "description": "Heiter",
+        "imageUrl": "https://api-weather.services.siag.it/api/v2/graphics/icons/imgsource/wetter/icon_2.png"
+      },
+      "tempMax": {
+        "min": 22,
+        "max": 28
+      },
+      "tempMin": {
+        "min": 6,
+        "max": 15
+      }
+    },
+    {
+      "date": "2025-08-26T00:00:00",
+      "reliability": 80,
+      "symbol": {
+        "code": "b",
+        "description": "Heiter",
+        "imageUrl": "https://api-weather.services.siag.it/api/v2/graphics/icons/imgsource/wetter/icon_2.png"
+      },
+      "tempMax": {
+        "min": 23,
+        "max": 30
+      },
+      "tempMin": {
+        "min": 7,
+        "max": 16
+      }
+    },
+    {
+      "date": "2025-08-27T00:00:00",
+      "reliability": 70,
+      "symbol": {
+        "code": "c",
+        "description": "Wolkig",
+        "imageUrl": "https://api-weather.services.siag.it/api/v2/graphics/icons/imgsource/wetter/icon_3.png"
+      },
+      "tempMax": {
+        "min": 23,
+        "max": 29
+      },
+      "tempMin": {
+        "min": 9,
+        "max": 17
+      }
+    },
+    {
+      "date": "2025-08-28T00:00:00",
+      "reliability": 70,
+      "symbol": {
+        "code": "u",
+        "description": "Wolkig, Gewitter mit mäßigen Schauern",
+        "imageUrl": "https://api-weather.services.siag.it/api/v2/graphics/icons/imgsource/wetter/icon_21.png"
+      },
+      "tempMax": {
+        "min": 20,
+        "max": 26
+      },
+      "tempMin": {
+        "min": 11,
+        "max": 18
+      }
+    }
+  ]
+}
