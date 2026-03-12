@@ -1,4 +1,7 @@
-__pycache__
-.pypirc
-.venv
-dist
+**/*__pycache__
+**/*.coverage
+**/*.pypirc
+**/*.pytest_cache
+**/*.venv
+**/*.vscode
+**/*dist
