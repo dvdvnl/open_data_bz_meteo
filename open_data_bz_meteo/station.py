@@ -1,6 +1,6 @@
-from .sensor import Sensor
 from pydantic import BaseModel, Field, computed_field
-from typing import List, Optional
+
+from .sensor import Sensor
 
 
 class Station(BaseModel):
@@ -17,15 +17,15 @@ class Station(BaseModel):
     name_eng: str | None = Field(..., alias="NAME_E")
     name_ita: str | None = Field(..., alias="NAME_I")
     name_lld: str | None = Field(..., alias="NAME_L")
-    sensors: List[Sensor] = Field(default_factory=list)
+    sensors: list[Sensor] = Field(default_factory=list)
     station_code: str = Field(..., alias="SCODE")
 
     @computed_field
-    def sensor_types(self) -> List[str]:
+    def sensor_types(self) -> list[str]:
         """Return a list of sensor types available at this station."""
         return [sensor.type for sensor in self.sensors] if self.sensors else []
 
-    def get_sensor(self, sensor_type: str) -> Optional[Sensor]:
+    def get_sensor(self, sensor_type: str) -> Sensor | None:
         """Return the first sensor matching `sensor_type`, or `None` if not found."""
         for sensor in self.sensors:
             if sensor.type == sensor_type:

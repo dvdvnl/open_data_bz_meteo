@@ -1,6 +1,8 @@
-from .const import DATE_FORMAT
-from pydantic import BaseModel, Field, computed_field
 import datetime
+
+from pydantic import BaseModel, Field, computed_field
+
+from .const import DATE_FORMAT
 
 
 class Sensor(BaseModel):
@@ -22,4 +24,6 @@ class Sensor(BaseModel):
     @computed_field
     def parsed_datetime(self) -> "datetime.datetime":
         """Parsed :class:`datetime.datetime` from the raw ``date`` string."""
-        return datetime.datetime.strptime(self.date, DATE_FORMAT)
+        return datetime.datetime.strptime(self.date, DATE_FORMAT).replace(
+            tzinfo=datetime.UTC
+        )

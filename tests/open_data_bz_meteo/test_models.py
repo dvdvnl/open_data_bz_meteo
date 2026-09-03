@@ -1,7 +1,7 @@
-from open_data_bz_meteo.const import DATE_FORMAT
-from open_data_bz_meteo import Sensor, Station
 import datetime
 
+from open_data_bz_meteo import Sensor, Station
+from open_data_bz_meteo.const import DATE_FORMAT
 
 STATION_SAMPLE = {
     "SCODE": "ABCDE",
@@ -45,7 +45,7 @@ class TestSensor:
         assert isinstance(sensor.parsed_datetime, datetime.datetime)
         assert sensor.parsed_datetime == datetime.datetime.strptime(
             SENSOR_SAMPLE["DATE"], DATE_FORMAT
-        )
+        ).replace(tzinfo=datetime.UTC)
 
     def test_numeric_sensor_value(self):
         """Ensure numeric values are accepted for the sensor value field."""

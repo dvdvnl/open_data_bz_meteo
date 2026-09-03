@@ -1,6 +1,8 @@
-from open_data_bz_meteo import Client, Sensor, Station
 import pytest
 import requests_mock
+
+from open_data_bz_meteo import Client, Sensor, Station
+from open_data_bz_meteo.const import API_URL
 
 STATION_SAMPLE = {
     "SCODE": "ABCDE",
@@ -29,7 +31,7 @@ def test_get_stations_roundtrip(requests_mock: requests_mock.Mocker):
     """Ensure `get_stations` fetches and parses station list from the API."""
 
     client = Client()
-    url = "https://daten.buergernetz.bz.it/services/meteo/v1/stations"
+    url = API_URL + "/stations"
     requests_mock.get(url, json={"features": [{"properties": STATION_SAMPLE}]})
 
     stations = client.get_stations()
@@ -49,7 +51,7 @@ def test_get_sensors_and_get_sensor(requests_mock: requests_mock.Mocker):
     client = Client()
     station = Station.model_validate(STATION_SAMPLE)
 
-    sensor_url = "https://daten.buergernetz.bz.it/services/meteo/v1/sensors"
+    sensor_url = API_URL + "/sensors"
     requests_mock.get(sensor_url, json=[SENSOR_SAMPLE])
 
     # List of sensors
@@ -73,7 +75,7 @@ def test_get_stations_empty(requests_mock: requests_mock.Mocker):
     """Verify get_stations returns an empty list and rebuilds cache on subsequent calls."""
 
     client = Client()
-    url = "https://daten.buergernetz.bz.it/services/meteo/v1/stations"
+    url = API_URL + "/stations"
     requests_mock.get(url, json={"features": []})
 
     # API doesn't return stations
@@ -90,7 +92,7 @@ def test_get_station_not_found(requests_mock: requests_mock.Mocker):
     """Return None when requested station code is not present in API response."""
 
     client = Client()
-    url = "https://daten.buergernetz.bz.it/services/meteo/v1/stations"
+    url = API_URL + "/stations"
 
     # Station with wrong code
     wrong_station = {**STATION_SAMPLE, "SCODE": "ZZZZZ"}
@@ -103,7 +105,7 @@ def test_get_station_found(requests_mock: requests_mock.Mocker):
     """Return a Station object when the requested station code exists."""
 
     client = Client()
-    url = "https://daten.buergernetz.bz.it/services/meteo/v1/stations"
+    url = API_URL + "/stations"
     requests_mock.get(url, json={"features": [{"properties": STATION_SAMPLE}]})
 
     result = client.get_station("ABCDE")
@@ -117,7 +119,7 @@ def test_get_sensors_empty(requests_mock: requests_mock.Mocker):
     client = Client()
     station = Station.model_validate(STATION_SAMPLE)
 
-    sensor_url = "https://daten.buergernetz.bz.it/services/meteo/v1/sensors"
+    sensor_url = API_URL + "/sensors"
     requests_mock.get(sensor_url, json=[])
 
     sensors = client.get_sensors(station)

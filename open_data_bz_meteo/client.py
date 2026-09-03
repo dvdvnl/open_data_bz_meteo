@@ -1,17 +1,19 @@
 from __future__ import annotations
 
+import requests
+
+from open_data_bz_meteo.const import API_URL
+
 from .sensor import Sensor
 from .station import Station
-from typing import Optional
-import requests
 
 
 class Client:
     def __init__(
         self,
-        base_url: str = "https://daten.buergernetz.bz.it/services/meteo/v1",
+        base_url: str = API_URL,
         timeout: int = 10,
-        session: Optional[requests.Session] = None,
+        session: requests.Session | None = None,
     ) -> None:
         """Create a client.
 
@@ -53,7 +55,7 @@ class Client:
         return self.stations
 
     # Get a single station
-    def get_station(self, station_code: str) -> Optional[Station]:
+    def get_station(self, station_code: str) -> Station | None:
         """Return the station matching `station_code`, refreshing the station list.
 
         Args:
