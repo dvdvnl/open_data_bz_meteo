@@ -1,5 +1,5 @@
 test:
-	pytest -v --cov=open_data_bz_meteo
+	python3 -m pytest -v --cov=open_data_bz_meteo
 
 clean:
 	rm -rf dist/*

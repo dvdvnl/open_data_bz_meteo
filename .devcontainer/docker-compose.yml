@@ -1,0 +1,14 @@
+services:
+  devcontainer:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    hostname: dc-open_data_bz_meteo
+    container_name: dc-open_data_bz_meteo
+    environment:
+      - TZ=Europe/Rome
+    user: devcon
+    volumes:
+      - ../:/usr/src/app:cached
+      - ${HOME}/.gitconfig:/home/devcon/.gitconfig:ro
+      - ${HOME}/.ssh/${SSH_KEYFILE}:/home/devcon/.ssh/id_rsa:ro

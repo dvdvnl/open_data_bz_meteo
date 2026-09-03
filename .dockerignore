@@ -1,12 +1,10 @@
 **/*__pycache__
 **/*.coverage
-**/*.egg-info
-**/*.egg-info
-**/*.env
-**/*.env
+**/*coverage.xml
 **/*.pypirc
 **/*.pytest_cache
 **/*.venv
+**/*.env
 **/*.vscode
-**/*coverage.xml
 **/*dist
+**/*.egg-info

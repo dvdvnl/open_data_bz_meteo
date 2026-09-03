@@ -1,5 +1,5 @@
 from .sensor import Sensor
-from pydantic import BaseModel, Field, computed_field, ConfigDict
+from pydantic import BaseModel, Field, computed_field
 from typing import List, Optional
 
 

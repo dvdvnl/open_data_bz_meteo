@@ -1,5 +1,5 @@
 from .const import DATE_FORMAT
-from pydantic import BaseModel, Field, computed_field, ConfigDict
+from pydantic import BaseModel, Field, computed_field
 import datetime
 
 

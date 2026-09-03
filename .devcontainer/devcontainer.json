@@ -1,0 +1,27 @@
+{
+    "name": "open_data_bz_meteo",
+    "dockerComposeFile": [
+        "docker-compose.yml"
+    ],
+    "service": "devcontainer",
+    "workspaceFolder": "/usr/src/app",
+    "postStartCommand": "unset NODE_OPTIONS",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "editor.formatOnSave": true,
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.testing.pytestEnabled": true,
+                "python.testing.unittestEnabled": false
+            },
+            "extensions": [
+                "charliermarsh.ruff",
+                "eamodio.gitlens",
+                "mhutchie.git-graph",
+                "ms-python.black-formatter",
+                "ms-python.python",
+                "ms-python.vscode-pylance"
+            ]
+        }
+    }
+}
